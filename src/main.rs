@@ -13,8 +13,11 @@ use std::io::{self, BufRead};
  */
 
 fn isNonTrivialRotation(s1: &str, s2: &str) -> bool {
-
-true
+	let vecDeq1 = std::collections::VecDeque::from(vec![s1.chars()]);
+	let vecDeq2 = std::collections::VecDeque::from(vec![s2.chars()]);
+	println!("{:?} vs a{:?}", vecDeq1, vecDeq1);
+	//println!("{:?}", vecDeq1.iter().eq(&'a'));
+	true
 
 }
 
