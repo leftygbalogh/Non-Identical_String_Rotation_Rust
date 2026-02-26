@@ -15,7 +15,7 @@ use std::io::{self, BufRead};
 fn isNonTrivialRotation(s1: &str, s2: &str) -> bool {
 
 	if s1.eq_ignore_ascii_case(s2) {
-		return true;
+		return false;
 	}
 
 	let mut vecDeq1 = std::collections::VecDeque::new();
@@ -30,12 +30,12 @@ fn isNonTrivialRotation(s1: &str, s2: &str) -> bool {
 
 
 
-	println!("{:?} ", vecDeq1);
-	println!("{:?} ", vecDeq2);
+	//println!("{:?} ", vecDeq1);
+	//println!("{:?} ", vecDeq2);
 	for x in 0..vecDeq1.len()-1 {
 		let mut vecDeq3 = std::collections::VecDeque::new();
 		let mut c = vecDeq2.pop_front();
-		println!("what is popped: {:?} ", &c);
+		//println!("what is popped: {:?} ", &c);
 		if c != Option::from(vecDeq1[x]) {
 			vecDeq3.push_back(c.take().unwrap());
 			vecDeq2.append(&mut vecDeq3);
