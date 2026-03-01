@@ -12,6 +12,19 @@ fn rt () {
 	use super::*;
 	let data2 = [
 		("abcde", "cdeab", true),
+		("abcde", "cdeab",true),
+		("abcde", "bcdea",true),
+		("abcde", "eabcd",true),
+		("abcde", "deabc",true),
+		("hello", "llohe",true),
+		("abc", "abc", false),
+		("hello", "hello", false),
+		("aa", "aa", false),
+		("aaa", "aaa", false),
+		("a", "b", false),
+		("abc", "xyz", false),
+		("abc", "acb", false),
+		("abc", "bac", false),
 	];
 
 	for d in data2.iter() {

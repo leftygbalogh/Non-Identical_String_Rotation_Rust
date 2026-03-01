@@ -1,6 +1,6 @@
 mod tests;
 
-use std::collections::VecDeque;
+
 use std::io::{self, BufRead};
 
 
@@ -15,6 +15,7 @@ use std::io::{self, BufRead};
  */
 
 fn isNonTrivialRotation(s1: &str, s2: &str) -> bool {
+	use std::collections::VecDeque;
 
 	if s1.eq_ignore_ascii_case(s2) {
 		return false;
@@ -32,22 +33,22 @@ fn isNonTrivialRotation(s1: &str, s2: &str) -> bool {
 
 
 
-	println!("{:?} ", vecDeq1);
-	println!("{:?} ", vecDeq2);
+	// println!("{:?} ", vecDeq1);
+	// println!("{:?} ", vecDeq2);
 	let mut index = 0;
 	let mut vecDeq3:VecDeque<char> = std::collections::VecDeque::new();
 
 	while index < vecDeq1.len() {
 
 		let mut c = vecDeq2.pop_front();
-		println!("index os: {} what is popped: {:?}", index, &c);
+		//println!("index is: {} what is popped: {:?}", index, &c);
 		if &c != &Option::from(vecDeq1[index]) {
-			println!("character {:?} ", &c);
-			println!("VD2 before: {:?} ", &vecDeq2);
+			// println!("character {:?} ", &c);
+			// println!("VD2 before: {:?} ", &vecDeq2);
 			vecDeq3.push_back(c.unwrap().to_ascii_lowercase());
-			println!("VD3 intermediate: {:?} ", &vecDeq3);
+//			println!("VD3 intermediate: {:?} ", &vecDeq3);
 			vecDeq2.append(&mut vecDeq3);
-			println!("VD2 intermediate: {:?} ", &vecDeq2);
+//			println!("VD2 intermediate: {:?} ", &vecDeq2);
 			if &vecDeq1.iter().collect::<String>() == &vecDeq2.iter().collect::<String>()
 			{
 				return true;
@@ -60,8 +61,8 @@ fn isNonTrivialRotation(s1: &str, s2: &str) -> bool {
 		index += 1;
 
 	}
-	println!("D1: {:?}", vecDeq1);
-	println!("D2: {:?}", vecDeq2);
+//	println!("D1: {:?}", vecDeq1);
+//	println!("D2: {:?}", vecDeq2);
 	vecDeq1.iter().collect::<String>() == vecDeq2.iter().collect::<String>()
 
 }
